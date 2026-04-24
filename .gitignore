@@ -1,0 +1,7 @@
+vulnerability-pipeline/
+__pycache__/
+data/
+logs/
+.airflow/
+
+*.pyc

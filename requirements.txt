@@ -1,0 +1,6 @@
+apache-airflow
+pyspark
+neo4j
+psycopg2-binary
+requests
+pandas

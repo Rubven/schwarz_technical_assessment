@@ -1,0 +1,10 @@
+vulnerability-pipeline/
+__pycache__/
+data/
+files/
+logs/
+.airflow/
+
+*.pyc
+.DS_Store
+airflow.*

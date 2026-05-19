@@ -65,14 +65,18 @@ docker run -d \
 ```
 
 ### 4. Execute the Pipeline
-Trigger the pipeline tasks locally in sequential order to simulate a daily run:
-
+Trigger the pipeline to simulate a monthly run
 ```bash
-airflow tasks test vulnerability_pipeline extract_cve_api 2026-03-20
-airflow tasks test vulnerability_pipeline pyspark_transformations 2026-03-20
-airflow tasks test vulnerability_pipeline data_quality_checks 2026-03-20
-airflow tasks test vulnerability_pipeline load_neo4j 2026-03-20
-airflow tasks test vulnerability_pipeline load_postgres 2026-03-20
+airflow dags test vulnerability_pipeline 2026-04-20
+```
+
+Trigger the pipeline tasks locally in sequential order to simulate a daily run:
+```bash
+airflow tasks test vulnerability_pipeline extract_cve_api 2026-04-20
+airflow tasks test vulnerability_pipeline pyspark_transformations 2026-04-20
+airflow tasks test vulnerability_pipeline data_quality_checks 2026-04-20
+airflow tasks test vulnerability_pipeline load_neo4j 2026-04-20
+airflow tasks test vulnerability_pipeline load_postgres 2026-04-20
 ```
 
 ## Data Quality Framework

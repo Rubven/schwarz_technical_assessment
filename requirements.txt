@@ -1,6 +1,16 @@
-apache-airflow
-pyspark
-neo4j
 psycopg2-binary
 requests
-pandas
+
+# Pipeline Execution
+apache-airflow>=2.8.0
+
+# Data Processing
+pyspark>=3.5.0
+pandas>=2.0.0
+pyarrow>=14.0.0
+
+# Database
+neo4j>=5.14.0
+
+# Environment Management
+python-dotenv>=1.0.0

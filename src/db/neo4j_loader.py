@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 import pandas as pd
 from neo4j import GraphDatabase
 
@@ -74,13 +75,16 @@ class Neo4jPipeline:
 def run_neo4j_load(**kwargs):
     """Airflow callable to execute the Neo4j load."""
     
-    # Get credentials
+    # Search for and load the .env file into the environment
+    load_dotenv()
+    
+    # Pull credentials safely
     uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
     user = os.getenv("NEO4J_USER", "neo4j")
     password = os.getenv("NEO4J_PASSWORD")
     
     if not password:
-        raise ValueError("Critical error: NEO4J_PASSWORD environment variable is missing.")
+        raise ValueError("Critical error: NEO4J_PASSWORD is missing from the .env file.")
     
     base_dir = os.getcwd()
     devices_path = os.path.join(base_dir, "data/processed/devices")

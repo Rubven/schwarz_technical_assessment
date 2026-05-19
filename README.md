@@ -65,12 +65,12 @@ docker run -d \
 ```
 
 ### 4. Execute the Pipeline
-Trigger the pipeline to simulate a monthly run
+Trigger the pipeline to simulate a monthly run:
 ```bash
 airflow dags test vulnerability_pipeline 2026-04-20
 ```
 
-Trigger the pipeline tasks locally in sequential order to simulate a daily run:
+Or trigger the pipeline tasks locally in sequential:
 ```bash
 airflow tasks test vulnerability_pipeline extract_cve_api 2026-04-20
 airflow tasks test vulnerability_pipeline pyspark_transformations 2026-04-20
